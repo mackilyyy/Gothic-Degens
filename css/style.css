@@ -1,210 +1,168 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand&family=Roboto+Slab&family=Sora:wght@400;700&display=swap');
-
-:root {
-    --primary: #0d6efd;
-    --dark: #21252f;
-    --body: #888;
-    --box-shadow: 0 8px 22px rgb(0,0,0,0.1);
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand&family=Roboto+Slab&family=Sora:wght@400;700&display=swap");
+/* ----- Body ----- */
 body {
-    font-family: Sora, "sans-serif";
-    line-height: 1.7;
-    color: var(--body)
+  font-family: Sora, "sans-serif";
+  line-height: 1.7;
+  color: #888;
+}
+body h1, body h2, body h3, body h4, body h5, body h6, body .display-4 {
+  color: #21252f;
+  font-weight: 700;
+}
+body a {
+  color: #21252f;
+  text-decoration: none;
+}
+body img { /* Make responsive images */
+  width: 100%;
+}
+body .logo {
+  width: 80px;
+}
+body .btn {
+  padding: 14px 18px;
+  border-width: 2px;
+  border-radius: 50px;
 }
 
-h1,h2,h3,h4,h5,h6,
-.display-4 {
-    color: var(--dark);
-    font-weight: 700;
-}
-
-a {
-    color: var(--dark);
-    text-decoration: none;
-}
-
-img { /* Make responsive images */
-    width: 100%;
-}
-
-.logo {
-    width: 80px;
-}
-
+/* ----- Fin Body ----- */
 /* ----- Navbar ----- */
-
 .navbar {
-   box-shadow: var(--box-shadow); 
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
 }
-
 .navbar .nav-link {
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.btn {
-    padding: 14px 18px;
-    border-width: 2px;
-    border-radius: 50px;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 /* ----- Fin Navbar ----- */
-
-
 /* ----- Inicio ----- */
-
 .hero {
-    background-image: url(../img/covernft.png);
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    position: relative;
-    z-index: 2;
+  background-image: url(../img/covernft.png);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 2;
 }
-
 .hero::after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(21, 20, 51, 0.8);
-    z-index: -1;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(21, 20, 51, 0.8);
+  z-index: -1;
 }
 
 /* ----- Fin Inicio ----- */
-
 /* ----- Nosotros ----- */
-
 section {
-    padding-top: 120px;
-    padding-bottom: 120px;
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
-
-.card-effect {
-    box-shadow: var(--box-shadow);
-    background-color: #fff;
-    padding: 25px;
-    transition: all 0.35s ease;
+section .card-effect {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 25px;
+  transition: all 0.35s ease;
 }
-
-.card-effect:hover {
-    box-shadow: none;
-    transform: translateY(5px);
+section .card-effect:hover {
+  box-shadow: none;
+  transform: translateY(5px);
 }
-
-.iconbox {
-    width: 55px;
-    height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--primary);
-    color: #fff;
-    font-size: 32px;
-    border-radius: 100px;
+section .service {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
 }
-
-.service {
-    position: relative;
-    z-index: 2;
-    overflow: hidden;
+section .service::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background-color: #0d6efd;
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.4s ease;
 }
-
-.service::after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: -100%;
-    left: 0;
-    background-color: var(--primary);
-    z-index: -1;
-    opacity: 0;
-    transition: all 0.4s ease;
+section .service .iconbox {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0d6efd;
+  color: #fff;
+  font-size: 32px;
+  border-radius: 100px;
 }
-
-.service:hover .iconbox {
-    background-color: #fff;
-    color: var(--primary);
+section .service:hover .iconbox {
+  background-color: #fff;
+  color: #0d6efd;
 }
-
-.service:hover h5,
-.service:hover p {
-    color: #fff;
+section .service:hover h5, section .service:hover p {
+  color: #fff;
 }
-
-.service:hover::after {
-    opacity: 1;
-    top: 0;
+section .service:hover::after {
+  opacity: 1;
+  top: 0;
 }
 
 /* ----- Fin Nosotros ----- */
-
 /* ----- Portfolio ----- */
-
 .project {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
-
 .project .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(21, 20, 51, 0.8);
-    padding: 30px;
-    display: flex;
-    align-items: flex-start;
-    transition: all 0.4s ease;
-    opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(21, 20, 51, 0.8);
+  padding: 30px;
+  display: flex;
+  align-items: flex-start;
+  transition: all 0.4s ease;
+  opacity: 0;
 }
-
 .project img {
-    transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
-
 .project:hover .overlay {
-    opacity: 1;
+  opacity: 1;
 }
-
 .project:hover img {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* ----- Fin Portfolio ----- */
-
 /* ----- Contacto ----- */
-
 form input.form-control {
-    height: 56px;
-
+  height: 56px;
 }
-
 form .form-control {
-    border: transparent;
-    border-radius: 10px;
-    background-color: rgba(0,0,0,0.05);
+  border: transparent;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 /* ----- Fin Contacto ----- */
-
 /* ----- Footer ----- */
-
 .footer-top {
-    padding: 30px;
-    background-color: var(--dark);
+  padding: 30px;
+  background-color: #21252f;
 }
-
 .footer-top a {
-    color: var(--body);
+  color: #888;
+}
+.footer-top a:hover {
+  color: #fff;
 }
 
-.footer-top a:hover {
-    color: #fff;
-}
-/* ----- Fin Footer ----- */
+/* ----- Fin Footer ----- *//*# sourceMappingURL=style.css.map */

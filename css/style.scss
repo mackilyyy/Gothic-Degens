@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand&family=Roboto+Slab&family=Sora:wght@400;700&display=swap');
+
+// Variables SCSS
+
+$primary: #0d6efd;
+$dark: #21252f;
+$body: #888;
+$box-shadow: 0 8px 22px rgb(0,0,0,0.1);
+
+// Fin Variables SCSS
+
+/* ----- Body ----- */
+
+body {
+    font-family: Sora, "sans-serif";
+    line-height: 1.7;
+    color: $body;
+    
+    h1,h2,h3,h4,h5,h6,.display-4 {
+        color: $dark;
+        font-weight: 700;
+    }
+
+    a {
+        color: $dark;
+        text-decoration: none;
+    }
+
+    img { /* Make responsive images */
+        width: 100%;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    .btn {
+        padding: 14px 18px;
+        border-width: 2px;
+        border-radius: 50px;
+    }
+}
+
+/* ----- Fin Body ----- */
+
+/* ----- Navbar ----- */
+
+.navbar {
+    box-shadow: $box-shadow;
+
+    .nav-link {
+        font-size: 14px;
+        font-weight: 700;
+    }
+}
+
+/* ----- Fin Navbar ----- */
+
+/* ----- Inicio ----- */
+
+.hero {
+    background-image: url(../img/covernft.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 2;
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(21, 20, 51, 0.8);
+        z-index: -1;  
+    }
+}
+
+/* ----- Fin Inicio ----- */
+
+/* ----- Nosotros ----- */
+
+section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+    .card-effect {
+        box-shadow: $box-shadow;
+        background-color: #fff;
+        padding: 25px;
+        transition: all 0.35s ease;
+
+        &:hover {
+            box-shadow: none;
+            transform: translateY(5px);
+        }
+    }
+
+    .service {
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+
+        &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: -100%;
+            left: 0;
+            background-color: $primary;
+            z-index: -1;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .iconbox {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $primary;
+            color: #fff;
+            font-size: 32px;
+            border-radius: 100px;
+        }
+
+        &:hover {
+            .iconbox {
+                background-color: #fff;
+                color: $primary;
+            }
+
+            h5,p {
+                color: #fff;
+            }
+
+            &::after {
+                opacity: 1;
+                top: 0;
+            }
+        }
+    }
+}
+
+/* ----- Fin Nosotros ----- */
+
+/* ----- Portfolio ----- */
+
+.project {
+    position: relative;
+    overflow: hidden;
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(21, 20, 51, 0.8);
+        padding: 30px;
+        display: flex;
+        align-items: flex-start;
+        transition: all 0.4s ease;
+        opacity: 0;
+    }
+
+    img {
+        transition: all 0.4s ease;
+    }
+
+    &:hover {
+        .overlay {
+            opacity: 1;
+        }
+
+        img {
+            transform: scale(1.1);
+        }
+    }
+}
+
+/* ----- Fin Portfolio ----- */
+
+/* ----- Contacto ----- */
+
+form {
+    input.form-control {
+        height: 56px;
+    }
+
+    .form-control {
+        border: transparent;
+        border-radius: 10px;
+        background-color: rgba(0,0,0,0.05);
+    }
+}
+
+/* ----- Fin Contacto ----- */
+
+/* ----- Footer ----- */
+
+.footer-top {
+    padding: 30px;
+    background-color: $dark;
+
+    a {
+        color: $body;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
+/* ----- Fin Footer ----- */
