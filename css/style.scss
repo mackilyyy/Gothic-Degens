@@ -187,16 +187,48 @@ section {
 
 /* ----- Contacto ----- */
 
+// form {
+//     input.form-control {
+//         height: 56px;
+//     }
+
+//     .form-control {
+//         border: transparent;
+//         border-radius: 10px;
+//         background-color: rgba(0,0,0,0.05);
+//     }
+// }
+
+$estilos: (
+    border: transparent,
+    border-radius: 10px,
+    background-color: rgb(97, 30, 30),
+);
+
 form {
     input.form-control {
         height: 56px;
     }
 
-    .form-control {
-        border: transparent;
-        border-radius: 10px;
-        background-color: rgba(0,0,0,0.05);
+    .fm-1 {
+        border: map-get($estilos, border);
+        border-radius: map-get($estilos, border-radius);
+        background-color: map-get($estilos, background-color);
     }
+    .fm-2 {
+        @extend .fm-1;
+        background-color: $primary;
+    }
+    .fm-3 {
+        border: map-get($estilos, border);
+        border-radius: map-get($estilos, border-radius);
+        background-color: $dark;
+    }
+    .fm-4 {
+        @extend .fm-3;
+        border-radius: 0px;
+    }
+
 }
 
 /* ----- Fin Contacto ----- */
