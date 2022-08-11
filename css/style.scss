@@ -1,3 +1,5 @@
+// Google Fonts
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand&family=Roboto+Slab&family=Sora:wght@400;700&display=swap');
 
 // Variables SCSS
@@ -9,12 +11,94 @@ $box-shadow: 0 8px 22px rgb(0,0,0,0.1);
 
 // Fin Variables SCSS
 
-/* ----- Body ----- */
+// Mixins
+
+@mixin card-effect {
+    box-shadow: $box-shadow;
+    background-color: #fff;
+    padding: 25px;
+    transition: all 0.35s ease;
+
+    &:hover {
+        box-shadow: none;
+        transform: translateY(5px);
+    }
+}
+
+@mixin project {
+
+        position: relative;
+        overflow: hidden;
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(21, 20, 51, 0.8);
+            padding: 30px;
+            display: flex;
+            align-items: flex-start;
+            transition: all 0.4s ease;
+            opacity: 0;
+        }
+
+        img {
+            transition: all 0.4s ease;
+        }
+
+        &:hover {
+            .overlay {
+                opacity: 1;
+            }
+
+            img {
+                transform: scale(1.1);
+            }
+        }
+}
+
+@mixin social-icons {
+    display: flex;
+    justify-content: center;
+
+    a {
+        width: 34px;
+        height: 34px;
+        background-color: $primary;
+        border-radius: 2px solid $primary;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        margin-left: 5px;
+        transition: all 0.4s ease;
+        border: 2px solid $primary;
+    }
+
+    a:hover {
+        color: $primary;
+        background-color: transparent;
+        border-color: $primary;
+
+    }
+}
+
+// Fin Mixins
+
+// Body
 
 body {
     font-family: Sora, "sans-serif";
     line-height: 1.7;
     color: $body;
+
+    section {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
     
     h1,h2,h3,h4,h5,h6,.display-4 {
         color: $dark;
@@ -41,9 +125,9 @@ body {
     }
 }
 
-/* ----- Fin Body ----- */
+// Fin Body
 
-/* ----- Navbar ----- */
+// Navbar
 
 .navbar {
     box-shadow: $box-shadow;
@@ -54,9 +138,9 @@ body {
     }
 }
 
-/* ----- Fin Navbar ----- */
+// Fin Navbar
 
-/* ----- Inicio ----- */
+// Inicio
 
 .hero {
     background-image: url(../img/covernft.png);
@@ -78,24 +162,14 @@ body {
     }
 }
 
-/* ----- Fin Inicio ----- */
+//Fin Inicio
 
-/* ----- Nosotros ----- */
+// Nosotros
 
-section {
-    padding-top: 120px;
-    padding-bottom: 120px;
+#nosotros {
 
     .card-effect {
-        box-shadow: $box-shadow;
-        background-color: #fff;
-        padding: 25px;
-        transition: all 0.35s ease;
-
-        &:hover {
-            box-shadow: none;
-            transform: translateY(5px);
-        }
+        @include card-effect;
     }
 
     .service {
@@ -146,94 +220,82 @@ section {
     }
 }
 
-/* ----- Fin Nosotros ----- */
+// Fin Nosotros
 
-/* ----- Portfolio ----- */
+// Drops
 
-.project {
-    position: relative;
-    overflow: hidden;
+#drops {
 
-    .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(21, 20, 51, 0.8);
-        padding: 30px;
-        display: flex;
-        align-items: flex-start;
-        transition: all 0.4s ease;
-        opacity: 0;
-    }
+    padding-top: 10px;
+    padding-bottom: 10px;
 
-    img {
-        transition: all 0.4s ease;
-    }
-
-    &:hover {
-        .overlay {
-            opacity: 1;
-        }
-
-        img {
-            transform: scale(1.1);
-        }
+    .project {
+        @include project;
     }
 }
 
-/* ----- Fin Portfolio ----- */
+// Fin Drops
 
-/* ----- Contacto ----- */
+// AllCollections
 
-// form {
-//     input.form-control {
-//         height: 56px;
-//     }
+#AllCollections {
 
-//     .form-control {
-//         border: transparent;
-//         border-radius: 10px;
-//         background-color: rgba(0,0,0,0.05);
-//     }
-// }
+    .project {
+        @include project;
+        border-radius: 20px;
+    }
+    .social-icons {
+        @include social-icons;
+    }
 
-$estilos: (
-    border: transparent,
-    border-radius: 10px,
-    background-color: rgb(97, 30, 30),
-);
+    .social-icons a {
+        width: 100px;
+        height: 34px;
+        font-size: 24px;
+    }
+}
+
+// Fin AllCollections
+
+// Contacto
 
 form {
     input.form-control {
         height: 56px;
     }
 
-    .fm-1 {
-        border: map-get($estilos, border);
-        border-radius: map-get($estilos, border-radius);
-        background-color: map-get($estilos, background-color);
+    .form-control {
+        border: transparent;
+        border-radius: 10px;
+        background-color: rgba(0,0,0,0.05);
     }
-    .fm-2 {
-        @extend .fm-1;
-        background-color: $primary;
-    }
-    .fm-3 {
-        border: map-get($estilos, border);
-        border-radius: map-get($estilos, border-radius);
-        background-color: $dark;
-    }
-    .fm-4 {
-        @extend .fm-3;
-        border-radius: 0px;
-    }
-
 }
 
-/* ----- Fin Contacto ----- */
+// Fin Contacto
 
-/* ----- Footer ----- */
+// Porfolio
+
+#colecciones {
+
+    .card-effect {
+        @include card-effect;
+        border-radius: 40px;
+    }
+
+    .colecciones-tipos img {
+        width: 145px;
+        height: 145px;
+        border-radius: 100px;
+    }
+
+    .social-icons {
+        @include social-icons;
+    }
+}
+
+// Fin Portfolio
+
+//Footer
 
 .footer-top {
     padding: 30px;
@@ -248,4 +310,4 @@ form {
     }
 }
 
-/* ----- Fin Footer ----- */
+//Fin Footer

@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand&family=Roboto+Slab&family=Sora:wght@400;700&display=swap");
-/* ----- Body ----- */
 body {
   font-family: Sora, "sans-serif";
   line-height: 1.7;
   color: #888;
+}
+body section {
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 body h1, body h2, body h3, body h4, body h5, body h6, body .display-4 {
   color: #21252f;
@@ -25,8 +28,6 @@ body .btn {
   border-radius: 50px;
 }
 
-/* ----- Fin Body ----- */
-/* ----- Navbar ----- */
 .navbar {
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
 }
@@ -35,8 +36,6 @@ body .btn {
   font-weight: 700;
 }
 
-/* ----- Fin Navbar ----- */
-/* ----- Inicio ----- */
 .hero {
   background-image: url(../img/covernft.png);
   background-position: center;
@@ -56,28 +55,22 @@ body .btn {
   z-index: -1;
 }
 
-/* ----- Fin Inicio ----- */
-/* ----- Nosotros ----- */
-section {
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
-section .card-effect {
+#nosotros .card-effect {
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   padding: 25px;
   transition: all 0.35s ease;
 }
-section .card-effect:hover {
+#nosotros .card-effect:hover {
   box-shadow: none;
   transform: translateY(5px);
 }
-section .service {
+#nosotros .service {
   position: relative;
   z-index: 2;
   overflow: hidden;
 }
-section .service::after {
+#nosotros .service::after {
   content: "";
   width: 100%;
   height: 100%;
@@ -89,7 +82,7 @@ section .service::after {
   opacity: 0;
   transition: all 0.4s ease;
 }
-section .service .iconbox {
+#nosotros .service .iconbox {
   width: 55px;
   height: 55px;
   display: flex;
@@ -100,25 +93,27 @@ section .service .iconbox {
   font-size: 32px;
   border-radius: 100px;
 }
-section .service:hover .iconbox {
+#nosotros .service:hover .iconbox {
   background-color: #fff;
   color: #0d6efd;
 }
-section .service:hover h5, section .service:hover p {
+#nosotros .service:hover h5, #nosotros .service:hover p {
   color: #fff;
 }
-section .service:hover::after {
+#nosotros .service:hover::after {
   opacity: 1;
   top: 0;
 }
 
-/* ----- Fin Nosotros ----- */
-/* ----- Portfolio ----- */
-.project {
+#drops {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#drops .project {
   position: relative;
   overflow: hidden;
 }
-.project .overlay {
+#drops .project .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -131,40 +126,121 @@ section .service:hover::after {
   transition: all 0.4s ease;
   opacity: 0;
 }
-.project img {
+#drops .project img {
   transition: all 0.4s ease;
 }
-.project:hover .overlay {
+#drops .project:hover .overlay {
   opacity: 1;
 }
-.project:hover img {
+#drops .project:hover img {
   transform: scale(1.1);
 }
 
-/* ----- Fin Portfolio ----- */
-/* ----- Contacto ----- */
+#AllCollections .project {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+#AllCollections .project .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(21, 20, 51, 0.8);
+  padding: 30px;
+  display: flex;
+  align-items: flex-start;
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+#AllCollections .project img {
+  transition: all 0.4s ease;
+}
+#AllCollections .project:hover .overlay {
+  opacity: 1;
+}
+#AllCollections .project:hover img {
+  transform: scale(1.1);
+}
+#AllCollections .social-icons {
+  display: flex;
+  justify-content: center;
+}
+#AllCollections .social-icons a {
+  width: 34px;
+  height: 34px;
+  background-color: #0d6efd;
+  border-radius: 2px solid #0d6efd;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  margin-left: 5px;
+  transition: all 0.4s ease;
+  border: 2px solid #0d6efd;
+}
+#AllCollections .social-icons a:hover {
+  color: #0d6efd;
+  background-color: transparent;
+  border-color: #0d6efd;
+}
+#AllCollections .social-icons a {
+  width: 100px;
+  height: 34px;
+  font-size: 24px;
+}
+
 form input.form-control {
   height: 56px;
 }
-form .fm-1, form .fm-2 {
+form .form-control {
   border: transparent;
   border-radius: 10px;
-  background-color: rgb(97, 30, 30);
-}
-form .fm-2 {
-  background-color: #0d6efd;
-}
-form .fm-3, form .fm-4 {
-  border: transparent;
-  border-radius: 10px;
-  background-color: #21252f;
-}
-form .fm-4 {
-  border-radius: 0px;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* ----- Fin Contacto ----- */
-/* ----- Footer ----- */
+#colecciones .card-effect {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 25px;
+  transition: all 0.35s ease;
+  border-radius: 40px;
+}
+#colecciones .card-effect:hover {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+#colecciones .colecciones-tipos img {
+  width: 145px;
+  height: 145px;
+  border-radius: 100px;
+}
+#colecciones .social-icons {
+  display: flex;
+  justify-content: center;
+}
+#colecciones .social-icons a {
+  width: 34px;
+  height: 34px;
+  background-color: #0d6efd;
+  border-radius: 2px solid #0d6efd;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  margin-left: 5px;
+  transition: all 0.4s ease;
+  border: 2px solid #0d6efd;
+}
+#colecciones .social-icons a:hover {
+  color: #0d6efd;
+  background-color: transparent;
+  border-color: #0d6efd;
+}
+
 .footer-top {
   padding: 30px;
   background-color: #21252f;
@@ -174,6 +250,4 @@ form .fm-4 {
 }
 .footer-top a:hover {
   color: #fff;
-}
-
-/* ----- Fin Footer ----- *//*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
